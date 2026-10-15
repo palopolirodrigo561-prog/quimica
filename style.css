@@ -391,6 +391,24 @@ body[data-pagina="horarios"] .bloque--img-derecha {
 }
 
 /* =========================================
+   VIDEO DE YOUTUBE
+========================================= */
+
+.video-contenedor {
+    width: 100%;
+    margin-top: 30px;
+    aspect-ratio: 16 / 9;
+}
+
+.video-contenedor iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 12px;
+    background: #000;
+}
+
+/* =========================================
    PANTALLAS CHICAS
 ========================================= */
 
@@ -477,84 +495,88 @@ body[data-pagina="horarios"] .bloque--img-derecha {
 }
 
 /* =========================================
-   PASANTÍAS Y PROFES - versión de compu:
-   equilibrio visual entre las dos fotos y el texto
+   PASANTÍAS Y PROFES - versión de compu
 ========================================= */
 
 @media (min-width: 901px) {
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--texto-derecha > img.img-placeholder {
+    body[data-pagina="pasantias"] .bloque--texto-derecha > img.img-placeholder,
+    body[data-pagina="profes"] .bloque--texto-derecha > img.img-placeholder {
         width: 360px;
         height: 480px;
     }
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--texto-derecha .texto-placeholder {
+    body[data-pagina="pasantias"] .bloque--texto-derecha .texto-placeholder,
+    body[data-pagina="profes"] .bloque--texto-derecha .texto-placeholder {
         max-width: 560px;
     }
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--img-derecha > img.img-placeholder {
+    body[data-pagina="pasantias"] .bloque--img-derecha > img.img-placeholder,
+    body[data-pagina="profes"] .bloque--img-derecha > img.img-placeholder {
         width: 360px;
         height: 480px;
     }
 }
 
-/* Pantallas anchas: foto 1 | texto | foto 2 */
+/* Pantallas anchas: foto 1 | texto | foto 2
+   Las tres arrancan a la misma altura y las dos fotos
+   tienen exactamente el mismo tamaño */
 
 @media (min-width: 1100px) {
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .contenido-pagina {
+    body[data-pagina="pasantias"] .contenido-pagina,
+    body[data-pagina="profes"] .contenido-pagina {
         display: grid;
-        grid-template-columns: clamp(240px, 22vw, 360px) minmax(0, 1fr) clamp(240px, 22vw, 360px);
+        grid-template-columns: clamp(280px, 26vw, 460px) minmax(0, 1fr) clamp(280px, 26vw, 460px);
         column-gap: 40px;
         align-items: start;
     }
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .titulo-seccion {
+    body[data-pagina="pasantias"] .titulo-seccion,
+    body[data-pagina="profes"] .titulo-seccion {
         grid-column: 1 / -1;
     }
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque {
+    /* Los bloques dejan de ser cajas: sus hijos se acomodan en la grilla */
+    body[data-pagina="pasantias"] .bloque,
+    body[data-pagina="profes"] .bloque {
         display: contents;
     }
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--texto-derecha > img.img-placeholder {
+    body[data-pagina="pasantias"] .bloque--texto-derecha > img.img-placeholder,
+    body[data-pagina="profes"] .bloque--texto-derecha > img.img-placeholder {
         grid-column: 1;
         grid-row: 2;
+        align-self: start;
         width: 100%;
         height: auto;
         aspect-ratio: 3 / 4;
     }
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--texto-derecha .texto-placeholder {
+    body[data-pagina="pasantias"] .bloque--texto-derecha .texto-placeholder,
+    body[data-pagina="profes"] .bloque--texto-derecha .texto-placeholder {
         grid-column: 2;
         grid-row: 2;
+        align-self: start;
         justify-self: center;
-        max-width: 620px;
+        max-width: 680px;
+        width: 100%;
     }
 
-    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--img-derecha > img.img-placeholder {
+    /* El título del texto arranca a la altura del borde de las fotos */
+    body[data-pagina="pasantias"] .texto-placeholder h3,
+    body[data-pagina="profes"] .texto-placeholder h3 {
+        margin-top: 0;
+        line-height: 1;
+    }
+
+    body[data-pagina="pasantias"] .bloque--img-derecha > img.img-placeholder,
+    body[data-pagina="profes"] .bloque--img-derecha > img.img-placeholder {
         grid-column: 3;
         grid-row: 2;
+        align-self: start;
         width: 100%;
         height: auto;
         aspect-ratio: 3 / 4;
     }
-}
-
-/* =========================================
-   VIDEO DE YOUTUBE
-========================================= */
-
-.video-contenedor {
-    width: 100%;
-    margin-top: 30px;
-    aspect-ratio: 16 / 9;
-}
-
-.video-contenedor iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 12px;
-    background: #000;
 }
