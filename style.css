@@ -154,6 +154,35 @@ body.pagina-seccion .logo-escuela {
 }
 
 /* =========================================
+   TEXTO DE BIENVENIDA (página de inicio)
+========================================= */
+
+.texto-inicio {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 0 30px;
+    text-align: center;
+    color: white;
+}
+
+.texto-inicio h2 {
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.texto-inicio p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 14px;
+}
+
+/* =========================================
    MENÚ LATERAL (círculo negro con enlaces)
 ========================================= */
 
