@@ -468,3 +468,28 @@ body[data-pagina="horarios"] div.img-placeholder {
         max-width: 100%;
     }
 }
+
+/* =========================================
+   PASANTÍAS - versión de compu: equilibrio
+   visual entre las dos fotos y el texto
+========================================= */
+
+@media (min-width: 901px) {
+
+    /* Foto 1 (vertical): acompaña la altura del texto */
+    body[data-pagina="pasantias"] .bloque--texto-derecha > img.img-placeholder {
+        width: 360px;
+        height: 480px;
+    }
+
+    /* El texto se ensancha un poco para llenar el espacio */
+    body[data-pagina="pasantias"] .bloque--texto-derecha .texto-placeholder {
+        max-width: 560px;
+    }
+
+    /* Foto 2 (horizontal): mismo peso visual que la foto 1 */
+    body[data-pagina="pasantias"] .bloque--img-derecha > img.img-placeholder {
+        width: 520px;
+        height: 347px;
+    }
+}
