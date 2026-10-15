@@ -493,3 +493,55 @@ body[data-pagina="horarios"] div.img-placeholder {
         height: 480px;
     }
 }
+
+/* Pantallas anchas: foto 1 | texto | foto 2, las dos fotos
+   arrancan a la misma altura y el texto queda en el medio */
+
+@media (min-width: 1100px) {
+
+    body[data-pagina="pasantias"] .contenido-pagina {
+        display: grid;
+        grid-template-columns: clamp(240px, 22vw, 360px) minmax(0, 1fr) clamp(240px, 22vw, 360px);
+        column-gap: 40px;
+        align-items: start;
+    }
+
+    body[data-pagina="pasantias"] .titulo-seccion {
+        grid-column: 1 / -1;
+    }
+
+    /* Los bloques dejan de ser cajas: sus hijos se acomodan en la grilla */
+    body[data-pagina="pasantias"] .bloque {
+        display: contents;
+    }
+
+    body[data-pagina="pasantias"] .bloque--texto-derecha > img.img-placeholder {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    body[data-pagina="pasantias"] .bloque--texto-derecha .texto-placeholder {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: center;
+        max-width: 620px;
+    }
+
+    body[data-pagina="pasantias"] .bloque--img-derecha > img.img-placeholder {
+        grid-column: 3;
+        grid-row: 2;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    body[data-pagina="pasantias"] .video-placeholder {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        width: 100%;
+        margin-top: 60px;
+    }
+}
