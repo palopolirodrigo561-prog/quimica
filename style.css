@@ -487,9 +487,9 @@ body[data-pagina="horarios"] div.img-placeholder {
         max-width: 560px;
     }
 
-    /* Foto 2 (horizontal): mismo peso visual que la foto 1 */
+    /* Foto 2: mismo tamaño que la foto 1 */
     body[data-pagina="pasantias"] .bloque--img-derecha > img.img-placeholder {
-        width: 520px;
-        height: 347px;
+        width: 360px;
+        height: 480px;
     }
 }
