@@ -341,6 +341,13 @@ body[data-pagina="horarios"] div.img-placeholder {
     font-size: 22px;
 }
 
+/* El marco queda centrado en la página */
+
+body[data-pagina="materias"] .bloque--img-derecha,
+body[data-pagina="horarios"] .bloque--img-derecha {
+    justify-content: center;
+}
+
 /* =========================================
    PLACEHOLDER DE VIDEO (pendiente de edición)
 ========================================= */
