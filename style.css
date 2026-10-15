@@ -477,52 +477,47 @@ body[data-pagina="horarios"] .bloque--img-derecha {
 }
 
 /* =========================================
-   PASANTÍAS - versión de compu: equilibrio
-   visual entre las dos fotos y el texto
+   PASANTÍAS Y PROFES - versión de compu:
+   equilibrio visual entre las dos fotos y el texto
 ========================================= */
 
 @media (min-width: 901px) {
 
-    /* Foto 1 (vertical): acompaña la altura del texto */
-    body[data-pagina="pasantias"] .bloque--texto-derecha > img.img-placeholder {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--texto-derecha > img.img-placeholder {
         width: 360px;
         height: 480px;
     }
 
-    /* El texto se ensancha un poco para llenar el espacio */
-    body[data-pagina="pasantias"] .bloque--texto-derecha .texto-placeholder {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--texto-derecha .texto-placeholder {
         max-width: 560px;
     }
 
-    /* Foto 2: mismo tamaño que la foto 1 */
-    body[data-pagina="pasantias"] .bloque--img-derecha > img.img-placeholder {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--img-derecha > img.img-placeholder {
         width: 360px;
         height: 480px;
     }
 }
 
-/* Pantallas anchas: foto 1 | texto | foto 2, las dos fotos
-   arrancan a la misma altura y el texto queda en el medio */
+/* Pantallas anchas: foto 1 | texto | foto 2 */
 
 @media (min-width: 1100px) {
 
-    body[data-pagina="pasantias"] .contenido-pagina {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .contenido-pagina {
         display: grid;
         grid-template-columns: clamp(240px, 22vw, 360px) minmax(0, 1fr) clamp(240px, 22vw, 360px);
         column-gap: 40px;
         align-items: start;
     }
 
-    body[data-pagina="pasantias"] .titulo-seccion {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .titulo-seccion {
         grid-column: 1 / -1;
     }
 
-    /* Los bloques dejan de ser cajas: sus hijos se acomodan en la grilla */
-    body[data-pagina="pasantias"] .bloque {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque {
         display: contents;
     }
 
-    body[data-pagina="pasantias"] .bloque--texto-derecha > img.img-placeholder {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--texto-derecha > img.img-placeholder {
         grid-column: 1;
         grid-row: 2;
         width: 100%;
@@ -530,31 +525,24 @@ body[data-pagina="horarios"] .bloque--img-derecha {
         aspect-ratio: 3 / 4;
     }
 
-    body[data-pagina="pasantias"] .bloque--texto-derecha .texto-placeholder {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--texto-derecha .texto-placeholder {
         grid-column: 2;
         grid-row: 2;
         justify-self: center;
         max-width: 620px;
     }
 
-    body[data-pagina="pasantias"] .bloque--img-derecha > img.img-placeholder {
+    body:is([data-pagina="pasantias"], [data-pagina="profes"]) .bloque--img-derecha > img.img-placeholder {
         grid-column: 3;
         grid-row: 2;
         width: 100%;
         height: auto;
         aspect-ratio: 3 / 4;
     }
-
-       body[data-pagina="pasantias"] .video-placeholder {
-        grid-column: 1 / -1;
-        grid-row: 3;
-        width: 100%;
-        margin-top: 60px;
-    }
 }
 
 /* =========================================
-   VIDEO DE YOUTUBE (pasantías)
+   VIDEO DE YOUTUBE
 ========================================= */
 
 .video-contenedor {
@@ -569,21 +557,4 @@ body[data-pagina="horarios"] .bloque--img-derecha {
     border: 0;
     border-radius: 12px;
     background: #000;
-}
-    }
-   .video-contenedor {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-  aspect-ratio: 16 / 9;
-}
-
-.video-contenedor iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 12px;
-  background: #000;
-}
 }
