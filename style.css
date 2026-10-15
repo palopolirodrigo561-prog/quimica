@@ -332,6 +332,15 @@ img.img-placeholder {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
 }
 
+/* Marcos de Materias y Horarios: un poco más grandes */
+
+body[data-pagina="materias"] div.img-placeholder,
+body[data-pagina="horarios"] div.img-placeholder {
+    width: 340px;
+    height: 240px;
+    font-size: 22px;
+}
+
 /* =========================================
    PLACEHOLDER DE VIDEO (pendiente de edición)
 ========================================= */
@@ -446,6 +455,13 @@ img.img-placeholder {
     .img-placeholder {
         width: 100%;
         max-width: 320px;
+    }
+
+    body[data-pagina="materias"] div.img-placeholder,
+    body[data-pagina="horarios"] div.img-placeholder {
+        width: 100%;
+        max-width: 400px;
+        height: 240px;
     }
 
     .video-placeholder {
