@@ -545,11 +545,31 @@ body[data-pagina="horarios"] .bloque--img-derecha {
         aspect-ratio: 3 / 4;
     }
 
-    body[data-pagina="pasantias"] .video-placeholder {
+       body[data-pagina="pasantias"] .video-placeholder {
         grid-column: 1 / -1;
         grid-row: 3;
         width: 100%;
         margin-top: 60px;
+    }
+}
+
+/* =========================================
+   VIDEO DE YOUTUBE (pasantías)
+========================================= */
+
+.video-contenedor {
+    width: 100%;
+    margin-top: 30px;
+    aspect-ratio: 16 / 9;
+}
+
+.video-contenedor iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 12px;
+    background: #000;
+}
     }
    .video-contenedor {
   position: relative;
